@@ -7,8 +7,8 @@ export class ConfigService {
     this.envConfig.service = {
       transport: Transport.TCP,
       options: {
-        host: process.env.MS_HOST,
-        port: +process.env.MS_PORT,
+        host: process.env.HELLO_SERVICE_HOST,
+        port: +process.env.HELLO_SERVICE_PORT,
       },
     };
   }
