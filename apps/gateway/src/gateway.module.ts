@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { GatewayController } from './gateway.controller';
-import { GatewayService } from './gateway.service';
 import { ConfigModule } from '@nestjs/config';
 import { ClientProxyFactory } from '@nestjs/microservices';
 import { ConfigService } from './config.service';
@@ -22,7 +21,6 @@ import { ConfigService } from './config.service';
       },
       inject: [ConfigService],
     },
-    GatewayService,
   ],
 })
 export class GatewayModule {}

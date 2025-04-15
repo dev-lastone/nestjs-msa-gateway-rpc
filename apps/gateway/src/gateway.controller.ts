@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Controller()
 export class GatewayController {
   constructor(
-    @Inject(process.env.HELLO_SERVICE_NAME)
+    @Inject('HELLO_SERVICE')
     private readonly helloProxy: ClientProxy,
   ) {}
 
