@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
+    },
+    "controller": {
+      "type": "library",
+      "root": "libs/controller",
+      "entryFile": "index",
+      "sourceRoot": "libs/controller/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/controller/tsconfig.lib.json"
+      }
     }
   }
 }

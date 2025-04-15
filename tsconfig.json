@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@app/controller": [
+        "libs/controller/src"
+      ],
+      "@app/controller/*": [
+        "libs/controller/src/*"
+      ]
+    }
   }
 }
