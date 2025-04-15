@@ -1,12 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
-import { GatewayService } from './gateway.service';
+import { Controller, Get, Inject, Query } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
+import { Observable } from 'rxjs';
 
 @Controller()
 export class GatewayController {
-  constructor(private readonly gatewayService: GatewayService) {}
+  constructor(
+    @Inject(process.env.HELLO_SERVICE_NAME)
+    private readonly helloProxy: ClientProxy,
+  ) {}
 
-  @Get()
-  getHello(): string {
-    return this.gatewayService.getHello();
+  @Get('hello')
+  getHello(@Query('name') name: string): Observable<string> {
+    return this.helloProxy.send({ cmd: 'hello' }, name);
   }
 }
