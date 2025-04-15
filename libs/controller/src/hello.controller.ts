@@ -3,7 +3,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
 @Controller()
-export class GatewayController {
+export class HelloController {
   constructor(
     @Inject('HELLO_SERVICE')
     private readonly helloProxy: ClientProxy,

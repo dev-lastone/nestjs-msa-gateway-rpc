@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { HelloMessageController } from './hello.message.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ConfigService } from './config.service';
 import { ClientProxyFactory } from '@nestjs/microservices';
+import { HelloController } from '@app/controller/hello.controller';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { ClientProxyFactory } from '@nestjs/microservices';
       isGlobal: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [HelloMessageController, HelloController],
   providers: [
     ConfigService,
     {
@@ -23,4 +24,4 @@ import { ClientProxyFactory } from '@nestjs/microservices';
     },
   ],
 })
-export class AppModule {}
+export class HelloModule {}

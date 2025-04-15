@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { HelloModule } from './hello.module';
 import { MicroserviceOptions } from '@nestjs/microservices';
 import { Logger } from '@nestjs/common';
 import { ConfigService } from './config.service';
@@ -9,7 +9,7 @@ async function bootstrap() {
   const options = config.get('service');
   const port = config.get('port');
 
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(HelloModule);
   app.connectMicroservice<MicroserviceOptions>(options);
   await app.startAllMicroservices();
   await app.listen(port);

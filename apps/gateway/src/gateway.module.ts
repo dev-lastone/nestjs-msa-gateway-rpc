@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { GatewayController } from './gateway.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ClientProxyFactory } from '@nestjs/microservices';
 import { ConfigService } from './config.service';
+import { HelloController } from '@app/controller/hello.controller';
 
 @Module({
   imports: [
@@ -10,7 +10,7 @@ import { ConfigService } from './config.service';
       isGlobal: true,
     }),
   ],
-  controllers: [GatewayController],
+  controllers: [HelloController],
   providers: [
     ConfigService,
     {
