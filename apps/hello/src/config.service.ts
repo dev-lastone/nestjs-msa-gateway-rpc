@@ -4,6 +4,8 @@ export class ConfigService {
   private readonly envConfig: { [key: string]: any } = {};
 
   constructor() {
+    this.envConfig.port = +process.env.PORT || 3000;
+
     this.envConfig.service = {
       transport: Transport.TCP,
       options: {
